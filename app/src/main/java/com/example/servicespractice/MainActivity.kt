@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.example.servicespractice.MyBackgroundService.Companion.TAG
 import com.example.servicespractice.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -16,11 +17,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         val serviceIntent = Intent(this,MyBackgroundService::class.java)
         binding.btnStart.setOnClickListener {
-            Log.i("MYTAG","Starting service")
+            Log.i(TAG,"Starting service")
             startService(serviceIntent)
         }
         binding.btnStop.setOnClickListener {
-            Log.i("MYTAG","Stopping service")
+            Log.i(TAG,"Stopping service")
             stopService(serviceIntent)
         }
     }
